@@ -21,13 +21,12 @@ public class JSONLog implements ILogAdapter{
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         
-        String jsonMensagem = String.format("""
-                                               "nome_operacao": "%s",
-                                               "nome": "%s",
-                                               "data": "%s",
-                                               "hora": "%s",
-                                               "usuario": "%s"
-                                            """,
+        String jsonMensagem = String.format(
+            "   \"nome_operacao\": \"%s\",\n" +
+            "   \"nome\": \"%s\",\n" +      
+            "   \"data\": \"%s\",\n" +
+            "   \"hora\": \"%s\",\n" +
+            "   \"usuario\": \"%s\"\n",
              log.getOperacao().toUpperCase(), log.getNome().toUpperCase(), log.getData().format(dateFormatter), log.getData().format(timeFormatter), log.getUsuario().toUpperCase()
         );
 
