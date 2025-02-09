@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package main;
+package com.mycompany.log;
 
-import model.Log;
-import adapter.CSVLogAdapter;
-import adapter.JSONLogAdapter;
+import models.log;
+import modules.log.adapter.CSVLog;
+import modules.log.adapter.JSONLog;
 
 /**
  *
@@ -15,10 +15,10 @@ import adapter.JSONLogAdapter;
 public class main {
 
     public static void main(String[] args) {
-        Log log = new Log("Insercao", "classe referida insercao", "Usuario");
+        log log = new log("Insercao", "classe referida insercao", "Mikalateia");
         
-        JSONLogAdapter jsonLog = new JSONLogAdapter();
-        CSVLogAdapter csvLog = new CSVLogAdapter();
+        JSONLog jsonLog = new JSONLog();
+        CSVLog csvLog = new CSVLog();
         
         csvLog.escreverMensagem(log);
         jsonLog.escreverMensagem(log);

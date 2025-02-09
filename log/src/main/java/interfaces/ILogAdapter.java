@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package interfaces;
+package modules.log.interfaces;
 
 
-import model.Log;
+import models.log;
 
 /**
  *
  * @author Cauã
  */
 public interface ILogAdapter {
-    void escreverMensagem(Log log);
+    void escreverMensagem(log log);
 }
