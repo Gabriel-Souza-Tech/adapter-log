@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package models;
+package model;
 
 import java.time.LocalDateTime;
 
@@ -10,15 +10,15 @@ import java.time.LocalDateTime;
  *
  * @author Cauã
  */
-public class log {
+public class Log {
     private final String operacao;
-    private final String nome;
+    private final String classeOrigem;
     private final String usuario;
     private final LocalDateTime data;
     
-    public log (String operacao, String nome, String usuario){
+    public Log (String operacao, String nome, String usuario){
         this.operacao = operacao;
-        this.nome = nome;
+        this.classeOrigem = nome;
         this.usuario = usuario;
         this.data = LocalDateTime.now();
     }
@@ -28,7 +28,7 @@ public class log {
     }
 
     public String getNome() {
-        return nome;
+        return classeOrigem;
     }
 
     public String getUsuario() {
