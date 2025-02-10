@@ -1,27 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+
 package main;
 import adapter.CSVLogAdapter;
 import adapter.JSONLogAdapter;
-import models.log;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
+import interfaces.ILogAdapter;
+import model.log;
+import java.lang.NullPointerException;
 
 /**
  *
- * @author Gabriel
+ * @author Cauã
  */
+
 public class Main {
-
     public static void main(String[] args) {
-        log log = new log("Insercao", "classe referida insercao", "usuario");
-        
-        JSONLogAdapter jsonLog = new JSONLogAdapter();
-        CSVLogAdapter csvLog = new CSVLogAdapter();
-        
-        csvLog.escreverMensagem(log);
-        jsonLog.escreverMensagem(log);
+            ILogAdapter jsonLog = new JSONLogAdapter();
+            ILogAdapter csvLog = new CSVLogAdapter();
+            
+            Exception excessaoTeste = new NullPointerException();
 
+            log logSucesso = new log("Insercao", "classe referida insercao", "usuario");
+
+            jsonLog.escreverMensagemLogCorreto(logSucesso);
+            csvLog.escreverMensagemLogCorreto(logSucesso);
+            
+            jsonLog.escreverMensagemLogErro(logSucesso, excessaoTeste);
+            csvLog.escreverMensagemLogErro(logSucesso, excessaoTeste);
     }
 }

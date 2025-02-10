@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package models;
+package model;
 
 import java.time.LocalDateTime;
 
@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
  *
  * @author Cauã
  */
+
 public class log {
     private final String operacao;
     private final String nome;

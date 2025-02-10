@@ -1,49 +1,69 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
+
 package adapter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import interfaces.ILogAdapter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
-import models.log;
-import modules.log.interfaces.ILogAdapter;
+import model.log;
 
 /**
  *
  * @author Cauã
  */
+
 public class CSVLogAdapter implements ILogAdapter {
 
-    @Override
-    public void escreverMensagem(log log) {
-        
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        String FILE_PATH = "src/temp/logCsv/log.csv";
-        
-        File dir = new File("src/temp/logCsv");
-            if (!dir.exists()) {
-                dir.mkdirs();
-        }  
-        
+    private static final String FILE_PATH = "src/temp/logCsv/log.csv";
+    private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter TIME_FORMAT = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-        String csvMensagem = String.format(
+    @Override
+    public void escreverMensagemLogCorreto(log log) {
+        File dir = new File("src/temp/logCsv");
+        if (!dir.exists()) dir.mkdirs();
+
+        String corretoMensagem = String.format(
             "%s; %s; %s; %s; %s\n",
+             log.getOperacao().toUpperCase(),
+             log.getNome().toUpperCase(),
+             log.getData().format(DATE_FORMAT),
+             log.getData().format(TIME_FORMAT),
+             log.getUsuario().toUpperCase()
+        );
+
+
+        escreverLog(FILE_PATH, corretoMensagem);
+    }
+
+    @Override
+    public void escreverMensagemLogErro(log log, Exception e) {
+        File dir = new File("src/temp/logCsv");
+        if (!dir.exists()) dir.mkdirs();
+        
+        String erroMensagem = String.format(
+            "Ocorreu a falha \"%s\" ao realizar a \"%s\" do contato \"%s\"; %s; %s; %s\n",
+            e.getMessage(),
             log.getOperacao().toUpperCase(),
             log.getNome().toUpperCase(),
-            log.getData().format(dateFormatter),
-            log.getData().format(timeFormatter),
+            log.getData().format(DATE_FORMAT),
+            log.getData().format(TIME_FORMAT),
             log.getUsuario().toUpperCase()
         );
 
-        try (FileWriter writer = new FileWriter(FILE_PATH, true)) {
-            writer.write(csvMensagem);
+        escreverLog(FILE_PATH, erroMensagem);
+    }
+
+    private void escreverLog(String filePath, String logMensagem) {
+        try (FileWriter writer = new FileWriter(filePath, true)) {
+            writer.write(logMensagem);
         } catch (IOException exception) {
-            System.err.println("Ocorreu uma falha " + exception.getMessage() + " ao realizar a " + log.getOperacao() + " do contato " + log.getNome() + 
-                            (log.getData().format(dateFormatter) + ", " + log.getData().format(timeFormatter) + " e " + log.getUsuario()));
+            System.err.println("Ocorreu uma falha ao escrever no log: " + exception.getMessage());
         }
     }
 }
-

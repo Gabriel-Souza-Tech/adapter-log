@@ -2,22 +2,15 @@
    {
        "nome_operacao": "INSERCAO",
        "nome": "CLASSE REFERIDA INSERCAO",
-       "data": "09/02/2025",
-       "hora": "11:49:25",
+       "data": "10/02/2025",
+       "hora": "14:13:08",
        "usuario": "USUARIO"
    },
    {
-       "nome_operacao": "INSERCAO",
-       "nome": "CLASSE REFERIDA INSERCAO",
-       "data": "09/02/2025",
-       "hora": "11:49:29",
-       "usuario": "USUARIO"
-   },
-   {
-       "nome_operacao": "INSERCAO",
-       "nome": "CLASSE REFERIDA INSERCAO",
-       "data": "09/02/2025",
-       "hora": "11:49:46",
+       "erro": "Ocorreu a falha: null",
+       "ao realizar a operacao": "INSERCAO",
+       "data": "10/02/2025",
+       "hora": "14:13:08",
        "usuario": "USUARIO"
    }
 ]
