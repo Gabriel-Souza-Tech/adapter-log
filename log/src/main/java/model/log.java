@@ -12,18 +12,24 @@ import java.time.LocalDateTime;
  */
 
 public class log {
+    private final String tipoLog;
     private final String operacao;
     private final String nome;
     private final String usuario;
     private final LocalDateTime data;
     
-    public log (String operacao, String nome, String usuario){
+    public log (String tipoLog, String operacao, String nome, String usuario){
+        this.tipoLog = tipoLog;
         this.operacao = operacao;
         this.nome = nome;
         this.usuario = usuario;
         this.data = LocalDateTime.now();
     }
 
+    public String getTipoLog() {
+        return tipoLog;
+    }
+    
     public String getOperacao() {
         return operacao;
     }

@@ -7,8 +7,6 @@ package adapter;
 
 import interfaces.ILogAdapter;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 import model.log;
 
@@ -29,7 +27,8 @@ public class CSVLogAdapter implements ILogAdapter {
         if (!dir.exists()) dir.mkdirs();
 
         String corretoMensagem = String.format(
-            "%s; %s; %s; %s; %s\n",
+            "%s; %s; %s; %s; %s; %s\n",
+             log.getTipoLog().toUpperCase(),
              log.getOperacao().toUpperCase(),
              log.getNome().toUpperCase(),
              log.getData().format(DATE_FORMAT),
@@ -47,7 +46,8 @@ public class CSVLogAdapter implements ILogAdapter {
         if (!dir.exists()) dir.mkdirs();
         
         String erroMensagem = String.format(
-            "Ocorreu a falha \"%s\" ao realizar a \"%s\" do contato \"%s\"; %s; %s; %s\n",
+            "\"%s\' Ocorreu a falha \"%s\" ao realizar a \"%s\" do contato \"%s\"; %s; %s; %s\n",
+            log.getTipoLog().toUpperCase(),
             e.getMessage(),
             log.getOperacao().toUpperCase(),
             log.getNome().toUpperCase(),

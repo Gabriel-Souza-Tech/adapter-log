@@ -8,7 +8,6 @@ import adapter.CSVLogAdapter;
 import adapter.JSONLogAdapter;
 import interfaces.ILogAdapter;
 import model.log;
-import java.lang.NullPointerException;
 
 /**
  *
@@ -22,12 +21,13 @@ public class Main {
             
             Exception excessaoTeste = new NullPointerException();
 
-            log logSucesso = new log("Insercao", "classe referida insercao", "usuario");
+            log logSucesso = new log("Info", "Insercao", "classe referida insercao", "usuario");
+            log logErro = new log("Warning", "Insercao", "classe referida insercao", "usuario");
 
             jsonLog.escreverMensagemLogCorreto(logSucesso);
             csvLog.escreverMensagemLogCorreto(logSucesso);
             
-            jsonLog.escreverMensagemLogErro(logSucesso, excessaoTeste);
-            csvLog.escreverMensagemLogErro(logSucesso, excessaoTeste);
+            jsonLog.escreverMensagemLogErro(logErro, excessaoTeste);
+            csvLog.escreverMensagemLogErro(logErro, excessaoTeste);
     }
 }
