@@ -14,7 +14,7 @@ import model.log;
  * @author Cauã
  */
 
-public class Main {
+public class main {
     public static void main(String[] args) {
             ILogAdapter jsonLog = new JSONLogAdapter();
             ILogAdapter csvLog = new CSVLogAdapter();
