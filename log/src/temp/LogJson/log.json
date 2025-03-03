@@ -1,34 +1,14 @@
 [
    {
-       "tipo_log": "INFO",
-       "nome_operacao": "INSERCAO",
-       "nome": "CLASSE REFERIDA INSERCAO",
-       "data": "10/02/2025",
-       "hora": "16:30:17",
-       "usuario": "USUARIO"
+       "tipo_log": "INFO",  "nome_operacao": "INSERCAO",  "nome": "CLASSE REFERIDA INSERCAO",  "data": "03/03/2025",  "hora": "15:19:25",  "usuario": "USUARIO"
    },
    {
-       "tipo_log": "WARNING",
-       "erro": "Ocorreu a falha: null",
-       "ao realizar a operacao": "INSERCAO",
-       "data": "10/02/2025",
-       "hora": "16:30:17",
-       "usuario": "USUARIO"
+       "tipo_log": "WARNING",  "erro": "Ocorreu a falha: null",  "ao realizar a operacao": "INSERCAO",  "do contato": "CLASSE REFERIDA INSERCAO",  "data": "03/03/2025",  "hora": "15:19:25",  "usuario": "USUARIO"
    },
    {
-       "tipo_log": "INFO",
-       "nome_operacao": "INSERCAO",
-       "nome": "CLASSE REFERIDA INSERCAO",
-       "data": "10/02/2025",
-       "hora": "16:30:48",
-       "usuario": "USUARIO"
+       "tipo_log": "INFO",  "nome_operacao": "INSERCAO",  "nome": "CLASSE REFERIDA INSERCAO",  "data": "03/03/2025",  "hora": "15:20:10",  "usuario": "USUARIO"
    },
    {
-       "tipo_log": "WARNING",
-       "erro": "Ocorreu a falha: null",
-       "ao realizar a operacao": "INSERCAO",
-       "data": "10/02/2025",
-       "hora": "16:30:48",
-       "usuario": "USUARIO"
+       "tipo_log": "WARNING",  "erro": "Ocorreu a falha: null",  "ao realizar a operacao": "INSERCAO",  "do contato": "CLASSE REFERIDA INSERCAO",  "data": "03/03/2025",  "hora": "15:20:10",  "usuario": "USUARIO"
    }
 ]

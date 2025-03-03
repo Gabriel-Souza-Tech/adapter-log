@@ -46,7 +46,7 @@ public class CSVLogAdapter implements ILogAdapter {
         if (!dir.exists()) dir.mkdirs();
         
         String erroMensagem = String.format(
-            "\"%s\' Ocorreu a falha \"%s\" ao realizar a \"%s\" do contato \"%s\"; %s; %s; %s\n",
+            "\"%s\"; Ocorreu a falha \"%s\" ao realizar a \"%s\"; do contato \"%s\"; %s; %s; %s\n",
             log.getTipoLog().toUpperCase(),
             e.getMessage(),
             log.getOperacao().toUpperCase(),

@@ -32,12 +32,12 @@ public class JSONLogAdapter implements ILogAdapter {
 
         String corretoMensagem = String.format(
             "   {\n" +
-            "       \"tipo_log\": \"%s\",\n" +
-            "       \"nome_operacao\": \"%s\",\n" +
-            "       \"nome\": \"%s\",\n" +
-            "       \"data\": \"%s\",\n" +
-            "       \"hora\": \"%s\",\n" +
-            "       \"usuario\": \"%s\"\n" +
+            "       \"tipo_log\": \"%s\", " +
+            " \"nome_operacao\": \"%s\", " +
+            " \"nome\": \"%s\", " +
+            " \"data\": \"%s\", " +
+            " \"hora\": \"%s\", " +
+            " \"usuario\": \"%s\"\n" +
             "   }",
              log.getTipoLog().toUpperCase(),
              log.getOperacao().toUpperCase(),
@@ -57,16 +57,18 @@ public class JSONLogAdapter implements ILogAdapter {
         
         String erroMensagem = String.format(
             "   {\n" +
-            "       \"tipo_log\": \"%s\",\n" +
-            "       \"erro\": \"Ocorreu a falha: %s\",\n" +
-            "       \"ao realizar a operacao\": \"%s\",\n" +
-            "       \"data\": \"%s\",\n" +
-            "       \"hora\": \"%s\",\n" +
-            "       \"usuario\": \"%s\"\n" +
+            "       \"tipo_log\": \"%s\", " +
+            " \"erro\": \"Ocorreu a falha: %s\", " +
+            " \"ao realizar a operacao\": \"%s\", " +
+            " \"do contato\": \"%s\", " +
+            " \"data\": \"%s\", " +
+            " \"hora\": \"%s\", " +
+            " \"usuario\": \"%s\"\n" +
             "   }",
             log.getTipoLog().toUpperCase(),   
             e.getMessage(),    
             log.getOperacao().toUpperCase(),
+            log.getNome().toUpperCase(),
             log.getData().format(DATE_FORMATTER),
             log.getData().format(TIME_FORMATTER),
             log.getUsuario().toUpperCase()
